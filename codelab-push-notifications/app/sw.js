@@ -24,7 +24,7 @@
 /* eslint-disable max-len */
 
 const applicationServerPublicKey =
-  'BOI5CAO33E7zLxDMeiMpX-z8fav0wnrQIyNhx6IU4obezDzTCDOTMF_Q3KXB23jPiTvqDz2cD8572-4qyLokru8';
+  'BNfGo38xDdqTV8LbhT8Tg0ki4XhI8keIbHig7XuAbZQS2ZH4X6QUr5i8I8-eQSkNTpdcQparrWxk6rs_aLa-R7I';
 
 /* eslint-enable max-len */
 

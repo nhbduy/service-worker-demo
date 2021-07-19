@@ -1,4 +1,4 @@
-const cacheName = 'v1';
+const CACHE_NAME = `pages_caches`;
 
 const cacheAssets = ['index.html', 'about.html', '/css/style.css', '/js/main.js'];
 
@@ -8,7 +8,7 @@ self.addEventListener('install', (event) => {
 
   event.waitUntil(
     caches
-      .open(cacheName)
+      .open(CACHE_NAME)
       .then((cache) => {
         console.log('Service Worker: Caching Files');
         cache.addAll(cacheAssets);
@@ -24,12 +24,12 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
-        cacheNames.map((cache) => {
-          if (cache !== cacheName) {
+        cacheNames
+          .filter((cacheName) => cacheName !== CACHE_NAME)
+          .map((cacheName) => {
             console.log('Service Worker: Clearing Old Cache');
-            return caches.delete(cache);
-          }
-        })
+            return caches.delete(cacheName);
+          })
       );
     })
   );
